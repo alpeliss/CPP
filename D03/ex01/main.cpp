@@ -1,7 +1,8 @@
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main(){
-    ClapTrap un("ted");
+    ScavTrap un("ted");
     ClapTrap deux("bob");
 
     int i = 0;
@@ -11,7 +12,6 @@ int main(){
         i++;
     }
 
-    un = deux;
 
     un.attack("J");
     un.beRepaired(1);
