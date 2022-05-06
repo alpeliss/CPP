@@ -20,15 +20,7 @@ Fixed::Fixed(const int nb): _nb_b(8){
 
 Fixed::Fixed(const float nb): _nb_b(8){
    // std::cout << "Float constructor called" << std::endl;
-    float tmp;
-    int     i = 0;
-
-    tmp = nb;
-    while (i < _nb_b){
-        tmp = tmp *  2;
-        i++;
-    }
-    this->_nb = tmp;
+    this->_nb = nb * (1 << _nb_b);
     return ;
 }
 
@@ -40,22 +32,11 @@ Fixed::~Fixed(){
 
 
 float Fixed::toFloat( void ) const{
-    float tmp;
-    int     i = 0;
-
-    tmp = float(this->_nb);
-    while (i < this->_nb_b){
-        tmp = tmp /  2;
-        i++;
-    }
-    return tmp;
+    return (float)this->_nb / (1 << _nb_b);
 }
 
 int Fixed::toInt( void ) const{
-    int f;
-    f = this->_nb >> this->_nb_b;
-
-    return f;
+    return (int)this->_nb >> this->_nb_b;
 }
 
 
@@ -114,7 +95,8 @@ bool   Fixed::operator>(Fixed const & rhs) const{
 
 Fixed  Fixed::operator+(Fixed const & rhs) const{
     Fixed   a;
-
+    float test;
+    
     a.setRawBits(this->getRawBits() + rhs.getRawBits());
     return a;
 }

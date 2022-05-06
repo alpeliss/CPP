@@ -66,7 +66,7 @@ int main( void ) {
     test_egal(0,1);
     test_egal(0.00000000001,0);
 
-    test_operations(1,1);
+    test_operations(5.05,2);
     test_operations(-2,1);
     test_operations(1,0);
 

@@ -6,6 +6,7 @@ Fixed::Fixed(void): _nb(0) , _nb_b(8){
 }
 
 Fixed::Fixed(Fixed const & src): _nb_b(8){
+    std::cout << "Copy constructor called" << std::endl;
     *this = src;
     return ;
 }
