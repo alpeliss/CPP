@@ -1,6 +1,6 @@
-NAME = ScavTrap
+NAME = FragTrap
 
-SRCS = ClapTrap.cpp ScavTrap.cpp main.cpp
+SRCS = ClapTrap.cpp ScavTrap.cpp FragTrap.cpp main.cpp
 
 FLAGS = -Wall -Wextra -Werror
 

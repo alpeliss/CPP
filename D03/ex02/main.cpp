@@ -2,10 +2,10 @@
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
-
 int main(){
-    ScavTrap un("ted");
-    ScavTrap deux("bob");
+    FragTrap un("ted");
+    FragTrap deux("bob");
+
   /*  int i = 0;
     while (i < 14){
         un.attack("X");
@@ -14,17 +14,16 @@ int main(){
         i++;
     }*/
     int i = 0;
-    while (i < 51){
-        std::cout << i + 1;
+    while (i < 101){
+        std::cout << i + 1 << " ";
         un.attack("X");
         i++;
     }
-    un.guardGate();
-    un.guardGate();
+    un.highFivesGuys();
     un.beRepaired(5);
     un = deux;
 
-    un.guardGate();
+    un.highFivesGuys();
     un.attack("J");
     un.beRepaired(1);
     un.takeDamage(8);
@@ -33,7 +32,7 @@ int main(){
     un.takeDamage(100);
     un.attack("J");
     un.beRepaired(1);
-    un.guardGate();
+    un.highFivesGuys();
     
     deux.attack("O");
 

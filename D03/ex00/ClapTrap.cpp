@@ -27,7 +27,7 @@ ClapTrap & ClapTrap::operator=(ClapTrap const & rhs){
     std::cout << "Claptrap assigenment operator called for " << rhs.get_name()  << std::endl;
     this->_name = rhs.get_name();
     this->_dmg = rhs._dmg; 
-    this->_hp = rhs._ep; 
+    this->_hp = rhs._hp; 
     this->_vie = rhs._vie; 
     this->_ep = rhs._ep; 
     return (*this);

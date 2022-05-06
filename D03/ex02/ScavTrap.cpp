@@ -27,11 +27,6 @@ void    ScavTrap::guardGate(void) {
         std ::cout << " is K.O. unable to do anything :(" << std::endl;
         return ;
     }
-    if (this->_ep <= 0){
-        std::cout << "ScavTrap " << this->_name;
-        std ::cout << " has no energy left to enter gatekeeper mode." << std::endl;
-        return ;
-    }
     if (this->_gk == false){
         std::cout << "Scavtrap " << this->_name << " goes in gatekeeper mode." << std::endl;
         this->_gk = true;
