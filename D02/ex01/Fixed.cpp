@@ -20,7 +20,7 @@ Fixed::Fixed(const int nb): _nb_b(8){
 
 Fixed::Fixed(const float nb): _nb_b(8){
     std::cout << "Float constructor called" << std::endl;
-    this->_nb = nb * (1 << _nb_b);
+    this->_nb = round(nb * (1 << _nb_b));
     return ;
 }
 

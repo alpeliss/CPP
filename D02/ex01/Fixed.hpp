@@ -2,6 +2,7 @@
 # define FIXED_H
 
 #include "iostream"
+#include <math.h>
 
 class Fixed{
 
