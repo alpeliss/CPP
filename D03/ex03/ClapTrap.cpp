@@ -8,7 +8,7 @@ ClapTrap::ClapTrap():_name("UnNamed"), _hp(10), _ep(10), _dmg(0){
 
 
 ClapTrap::ClapTrap(std::string name):_name(name), _hp(10), _ep(10), _dmg(0), _type("Claptrap"){
-    std::cout << "Name ClapTrap constructor called for " << this->_name << std::endl;
+    std::cout << "Basic ClapTrap constructor called for " << this->_name << std::endl;
     this->_vie = this->_hp;
     return ;
 }
@@ -30,7 +30,7 @@ std::string ClapTrap::get_name(void) const{
 
 
 ClapTrap & ClapTrap::operator=(ClapTrap const & rhs){
-    std::cout << " Claptrap assigenment operator called for " << rhs.get_name()  << std::endl;
+    std::cout << this->_type << " assigenment operator called for " << rhs.get_name()  << std::endl;
     this->_name = rhs.get_name();
     this->_dmg = rhs._dmg; 
     this->_hp = rhs._hp; 

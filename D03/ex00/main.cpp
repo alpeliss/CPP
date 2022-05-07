@@ -2,7 +2,8 @@
 
 int main(){
     ClapTrap un("ted");
-    ClapTrap deux("bob");
+    ClapTrap deux(un);
+    ClapTrap trois;
 
     int i = 0;
     while (i < 14){
@@ -11,6 +12,9 @@ int main(){
         i++;
     }
 
+    un.takeDamage(8);
+    un.takeDamage(8);
+    un.takeDamage(8);
     un = deux;
 
     un.attack("J");

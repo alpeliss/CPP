@@ -1,18 +1,16 @@
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main(){
-    ClapTrap a("oiu");
-    ClapTrap b(a);
-    ClapTrap c;
-    ScavTrap sun("etrertret");
-    ScavTrap sdeux(sun);
-    ScavTrap strois;
-    FragTrap un("ted");
-    FragTrap deux(un);
-    FragTrap trois;
+    DiamondTrap un("Diamond");
+    DiamondTrap deux(un);
+    DiamondTrap trois;
 
+    un.whoAmI();
+    deux.whoAmI();
+    trois.whoAmI();
   /*  int i = 0;
     while (i < 14){
         un.attack("X");
@@ -20,15 +18,18 @@ int main(){
         un.takeDamage(8);
         i++;
     }*/
+    /*
     int i = 0;
     while (i < 101){
         std::cout << i + 1 << " ";
         un.attack("X");
         i++;
-    }
+    }*/
     un.highFivesGuys();
+    un.guardGate();
+    un.guardGate();
     un.beRepaired(5);
-    un = deux;
+    un = trois;
 
     un.highFivesGuys();
     un.attack("J");
@@ -42,6 +43,7 @@ int main(){
     un.highFivesGuys();
     
     deux.attack("O");
+
 
     return 0;
 }

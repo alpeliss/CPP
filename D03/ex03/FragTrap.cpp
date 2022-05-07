@@ -10,6 +10,7 @@ FragTrap::FragTrap(): ClapTrap(){
     return ;
 }
 
+
 FragTrap::FragTrap(std::string name): ClapTrap(name){
     std::cout << "Name FragTrap constructor called for " << this->_name << std::endl;
     this->_hp = 100;

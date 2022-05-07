@@ -1,19 +1,23 @@
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
-#include "FragTrap.hpp"
 
 
 int main(){
+    ClapTrap a("ted");
+    ClapTrap b(a);
+    ClapTrap c;
     ScavTrap un("ted");
     ScavTrap deux("bob");
-  /*  int i = 0;
-    while (i < 14){
+    ScavTrap trois;
+    int i = 0;
+    while (i < 30){
+        std::cout << i + 1;
         un.attack("X");
         un.beRepaired(1);
-        un.takeDamage(8);
+        un.takeDamage(1);
         i++;
-    }*/
-    int i = 0;
+    }
+    i = 0;
     while (i < 51){
         std::cout << i + 1;
         un.attack("X");
@@ -34,8 +38,6 @@ int main(){
     un.attack("J");
     un.beRepaired(1);
     un.guardGate();
-    
-    deux.attack("O");
 
     return 0;
 }

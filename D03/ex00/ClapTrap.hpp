@@ -13,6 +13,7 @@ private:
     int         _dmg;
     
 public:
+    ClapTrap();
     ClapTrap(std::string name);
     ClapTrap(ClapTrap const & src);
     ~ClapTrap();

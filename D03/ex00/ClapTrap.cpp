@@ -1,7 +1,13 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string name):_name(name), _hp(10), _ep(10), _dmg(0){
+ClapTrap::ClapTrap():_name("UnNamed"), _hp(10), _ep(10), _dmg(0){
     std::cout << "Basic ClapTrap constructor called for " << this->_name << std::endl;
+    this->_vie = this->_hp;
+    return ;
+}
+
+ClapTrap::ClapTrap(std::string name):_name(name), _hp(10), _ep(10), _dmg(0){
+    std::cout << "Name ClapTrap constructor called for " << this->_name << std::endl;
     this->_vie = this->_hp;
     return ;
 }
