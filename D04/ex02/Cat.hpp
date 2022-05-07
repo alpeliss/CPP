@@ -1,18 +1,18 @@
-#ifndef DOG_H
-# define DOG_H
+#ifndef CAT_H
+# define CAT_H
 
 #include "iostream"
 #include "Animal.hpp"
 #include "Brain.hpp"
 
-class Dog : public Animal{
+class Cat : public AAnimal{
 
 public:
-    Dog ();
-    Dog(Dog const & src);
-    ~Dog();
+    Cat ();
+    Cat(Cat const & src);
+    ~Cat();
 
-    Dog & operator=(Dog const & rhs);
+    Cat & operator=(Cat const & rhs);
     virtual void makeSound(void) const;
     Brain    *get_brain() const;
 

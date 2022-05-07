@@ -1,6 +1,6 @@
 #include "Dog.hpp"
 
-Dog::Dog() : Animal(){
+Dog::Dog() : AAnimal(){
     std::cout << "Dog is born." << std::endl;
     this->_mind = new Brain;
     this->type = "Dog";

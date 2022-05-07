@@ -11,7 +11,7 @@ Animal::Animal(Animal const & src){
 }
 
 Animal::~Animal(){
-    std::cout << " Animal dies." << std::endl;
+    std::cout << "Animal dies." << std::endl;
     return ;
 }
 

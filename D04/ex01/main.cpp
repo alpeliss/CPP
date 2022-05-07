@@ -4,28 +4,35 @@
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 
-int main(){
-    const Animal* meta = new Animal();
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
-    const WrongAnimal *wa = new WrongAnimal();
-    const WrongAnimal *wc = new WrongCat();
+int main()
+{
+	Animal* array[12];
+	for (int i = 0; i < 12; i++)
+	{
+		std::cout << i << std::endl;
+		if (i % 2)
+			array[i] = new Dog();
+		else
+			array[i] = new Cat();
+	}
 
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl;
-    std::cout << meta->getType() << " " << std::endl;
-    std::cout << wa->getType() << " " << std::endl;
-    std::cout << wc->getType() << " " << std::endl;
-    i->makeSound(); //will output the cat sound!
-    j->makeSound();
-    meta->makeSound();
-    wa->makeSound();
-    wc->makeSound();
-    delete i;
-    delete j;
-    delete meta;
-    delete wc;
-    delete wa;
+	std::cout << std::endl;
+	for (int i = 0; i < 12; i++)
+	{
+		std::cout << i << std::endl;
+		array[i]->makeSound();
+	}
 
-return 0;
+	std::cout << std::endl;
+	for (int j = 0; j < 12; j++)
+	{
+		std::cout << j << std::endl;
+		delete (array[j]);
+	}
+
+	std::cout << "-------------------------" << std::endl;
+	Dog test = Dog();
+	Dog testb = Dog(test);
+
+	std::cout << "-------------------------" << std::endl;
 }
