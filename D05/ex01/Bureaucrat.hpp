@@ -2,6 +2,9 @@
 # define BUREAUCRAT_H
 
 #include "iostream"
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat{
 
@@ -14,12 +17,12 @@ public:
     Bureaucrat & operator=(Bureaucrat const & rhs);
     void    promote();
     void    demote();
+    void signForm(Form &form) const;
 
 private:
     Bureaucrat ();
     const std::string   _name;
     int _grade;
-
 
 
     class GradeTooHighException : public std::exception{
@@ -30,7 +33,10 @@ private:
     public:
 		virtual const char* what() const throw();
     };
-
+    class AlreadySignedException : public std::exception{
+    public:
+		virtual const char* what() const throw();
+    };
 
 };
 

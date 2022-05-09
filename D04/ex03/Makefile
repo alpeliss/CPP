@@ -1,6 +1,6 @@
-NAME = Animals
+NAME = Materia
 
-SRCS = main.cpp
+SRCS = Materia.cpp Character.cpp Source.cpp main.cpp
 
 FLAGS = -Wall -Wextra -Werror
 

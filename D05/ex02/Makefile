@@ -1,6 +1,6 @@
 NAME = Bureaucrat
 
-SRCS = Bureaucrat.cpp main.cpp
+SRCS = Bureaucrat.cpp Form.cpp PresidentialPardonForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp main.cpp
 
 FLAGS = -Wall -Wextra -Werror
 

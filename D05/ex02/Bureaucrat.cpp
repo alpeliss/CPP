@@ -33,6 +33,20 @@ void    Bureaucrat::demote(){
     this->_grade++;
 }
 
+void    Bureaucrat::signForm(AForm &form) const{
+    
+	
+    if (this->_grade > form.get_Sgrade()){
+        std::cout << *this << "couldn't sign" << form << " cause his grade is to low." << std::endl;
+        return ;
+    }
+    if (form.get_signed() == true){
+        std::cout << *this << "couldn't sign" << form << " cause it is already signed." << std::endl;
+        return ;
+    }
+    std::cout << *this << " signed" << form <<  std::endl;
+}
+
 Bureaucrat::~Bureaucrat(){
     return ;
 }
@@ -48,11 +62,3 @@ std::ostream & operator<<(std::ostream & o, Bureaucrat const & rhs){
     return o;
 
 }
-
-const char* Bureaucrat::GradeTooHighException::what() const throw(){	
-    return ("Grade is too high (max : 1)");		
-} 
-
-const char* Bureaucrat::GradeTooLowException::what() const throw(){
-    return ("Grade is too low (min : 150)");	
-} 
