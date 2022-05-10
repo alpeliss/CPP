@@ -20,9 +20,6 @@ public:
     int         get_Sgrade() const;
     int         get_Egrade() const;
     bool        get_signed() const;
-    class GradeTooHighException : public std::exception{};
-    class GradeTooLowException : public std::exception{};
-    class AlreadySignedException : public std::exception{};
     void beSigned(Bureaucrat & checker);
 
 private:
@@ -31,6 +28,25 @@ private:
     bool    _signed;
     int     _Sgrade;
     int     _Egrade;
+
+
+    class GradeTooHighException : public std::exception{
+    public:
+		virtual const char* what() const throw();
+    };
+    class GradeTooLowException : public std::exception{
+    public:
+		virtual const char* what() const throw();
+    };
+    class AlreadySignedException : public std::exception{
+    public:
+		virtual const char* what() const throw();
+    };
+
+    class SigningGradeTooLow : public std::exception{
+    public:
+		virtual const char* what() const throw();
+    };
 
 };
 

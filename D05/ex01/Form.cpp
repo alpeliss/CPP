@@ -1,5 +1,5 @@
 #include "Form.hpp"
-
+#include "Bureaucrat.hpp"
 
 Form::Form(std::string name, int Sgrade, int Egrade): _name(name), _Sgrade(Sgrade), _Egrade(Egrade), _signed(false){
     if (this->_Egrade > 150 || this->_Sgrade > 150)
@@ -35,7 +35,7 @@ bool        Form::get_signed() const{
 
 void        Form::beSigned(Bureaucrat & checker){
     if (checker.get_grade() > this->_Sgrade)
-        throw Form::GradeTooLowException();
+        throw Form::SigningGradeTooLow();
     if (this->_signed == true)
         throw Form::AlreadySignedException();
     this->_signed = true;
@@ -54,3 +54,19 @@ std::ostream & operator<<(std::ostream & o, Form const & rhs){
     return o;
 
 }
+
+const char* Form::GradeTooHighException::what() const throw(){
+    return ("Form grade is too high (max : 1)");		
+} 
+
+const char* Form::GradeTooLowException::what() const throw(){
+    return ("Form grade is too low (min : 150)");		
+} 
+
+const char* Form::SigningGradeTooLow::what() const throw(){
+    return ("The bureaucrat grade is too low, not habilitate to sign this form.");		
+} 
+
+const char* Form::AlreadySignedException::what() const throw(){
+    return ("The form is already signed, can't sign twice.");		
+} 

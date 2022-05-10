@@ -17,10 +17,8 @@ public:
     Bureaucrat & operator=(Bureaucrat const & rhs);
     void    promote();
     void    demote();
-    class GradeTooHighException : public std::exception{};
-    class GradeTooLowException : public std::exception{};
-    class AlreadySignedException : public std::exception{};
-    void signForm(AForm &form) const;
+    void signForm(AForm &form);
+    void  executeForm(AForm const & form);
 
 private:
     Bureaucrat ();
@@ -28,6 +26,14 @@ private:
     int _grade;
 
 
+    class GradeTooHighException : public std::exception{
+    public:
+		virtual const char* what() const throw();
+    };
+    class GradeTooLowException : public std::exception{
+    public:
+		virtual const char* what() const throw();
+    };
 
 };
 

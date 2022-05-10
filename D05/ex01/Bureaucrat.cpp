@@ -33,14 +33,16 @@ void    Bureaucrat::demote(){
     this->_grade++;
 }
 
-void    Bureaucrat::signForm(Form &form) const{
-    if (this->_grade > form.get_Sgrade()){
-        throw Form::GradeTooLowException();
+void    Bureaucrat::signForm(Form &form) {
+    try{
+        form.beSigned(*this);
+        std::cout << *this << "signed form " << form << std::endl;
     }
-    if (form.get_signed() == true){
-        throw Form::AlreadySignedException();
+    catch(const std::exception& e){
+	    std::cerr << *this << " couldn't sign "<< form;
+        std::cerr<< " because " << e.what() << std::endl;
+        
     }
-    std::cout << *this << " signed" << form <<  std::endl;
 }
 
 Bureaucrat::~Bureaucrat(){
@@ -60,13 +62,9 @@ std::ostream & operator<<(std::ostream & o, Bureaucrat const & rhs){
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw(){
-    return ("Grade is too high (max : 1)");		
+    return ("Bureaucrat grade is too high (max : 1)");		
 } 
 
 const char* Bureaucrat::GradeTooLowException::what() const throw(){
-    return ("Grade is too low (min : 150)");		
-} 
-
-const char* Bureaucrat::AlreadySignedException::what() const throw(){
-    return ("an't sign twice.");		
+    return ("Bureaucrat grade is too low (min : 150)");		
 } 

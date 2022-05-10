@@ -29,6 +29,7 @@ try{
     Bureaucrat  joe("Joe",150);
     std::cout << joe << std::endl;
     joe.demote();
+    std::cout << "Ne s'affiche pas" << std::endl;
 }
 catch(const std::exception& e){
 	std::cerr << e.what() << std::endl;

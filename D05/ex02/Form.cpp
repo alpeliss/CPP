@@ -35,10 +35,18 @@ bool        AForm::get_signed() const{
 
 void        AForm::beSigned(Bureaucrat & checker){
     if (checker.get_grade() > this->_Sgrade)
-        throw AForm::GradeTooLowException();
+        throw AForm::SigningGradeTooLow();
     if (this->_signed == true)
         throw AForm::AlreadySignedException();
     this->_signed = true;
+}
+
+void AForm::execute(Bureaucrat const & executor) const{
+    if (executor.get_grade() > this->_Egrade)
+        throw AForm::ExecuteGradeTooLow();
+    if (this->_signed == false)
+        throw AForm::NotSigned();
+    this->action();
 }
 
 AForm & AForm::operator=(AForm const & rhs){
@@ -54,3 +62,27 @@ std::ostream & operator<<(std::ostream & o, AForm const & rhs){
     return o;
 
 }
+
+const char* AForm::GradeTooHighException::what() const throw(){
+    return ("Form grade is too high (max : 1)");		
+} 
+
+const char* AForm::GradeTooLowException::what() const throw(){
+    return ("Form grade is too low (min : 150)");		
+} 
+
+const char* AForm::SigningGradeTooLow::what() const throw(){
+    return ("The bureaucrat grade is too low, not habilitate to sign this form.");		
+} 
+
+const char* AForm::AlreadySignedException::what() const throw(){
+    return ("The form is already signed, can't sign twice.");		
+} 
+
+const char* AForm::ExecuteGradeTooLow::what() const throw(){
+    return ("The bureaucrat grade is too low, not habilitate to sign this form.");		
+} 
+
+const char* AForm::NotSigned::what() const throw(){
+    return ("Can't execute a form not signed! Are you insane!");		
+} 

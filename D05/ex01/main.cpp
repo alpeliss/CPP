@@ -29,30 +29,35 @@ std::cout << ultra <<std::endl;
 std::cout << easy <<std::endl;
 
 try{
-     boss.promote();
+    Form       super_ultra("ultra", 0 , 1);
 }
 catch(const std::exception& e){
 	std::cerr << e.what() << std::endl;
 }
-
 try{
-     Bureaucrat  joe("Joe",151);
+    Form       super_ultra("ultra", 1 , 0);
 }
 catch(const std::exception& e){
 	std::cerr << e.what() << std::endl;
 }
-
 try{
-     Bureaucrat  joe("Joe",10);
+    Form       super_noob("f", 150 , 151);
 }
 catch(const std::exception& e){
 	std::cerr << e.what() << std::endl;
 }
-
 try{
-     Bureaucrat  joe("Joe",10);
+    Form       super_noob("f", 151 , 150);
 }
 catch(const std::exception& e){
 	std::cerr << e.what() << std::endl;
 }
+noob.signForm(easy);
+noob.signForm(ultra);
+boss.signForm(easy);
+boss.signForm(ultra);
+
+
+std::cout << ultra <<std::endl;
+std::cout << easy <<std::endl;
 }

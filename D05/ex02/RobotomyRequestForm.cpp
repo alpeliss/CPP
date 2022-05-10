@@ -20,7 +20,8 @@ RRForm::~RRForm(){
     return ;
 }
 
-void    RRForm::execute(Bureaucrat const & executor) const{
+
+void    RRForm::action() const{
     int v1 = rand() % 2;
     if (v1 == 0){
         std::cout << "ZZZzzzZzZZZZzZZzzZz  zZZ ZzZZZzzz... " << this->_target << " was successfully robotize" << std::endl;

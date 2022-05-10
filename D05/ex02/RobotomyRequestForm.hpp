@@ -13,7 +13,7 @@ public:
     ~RRForm();
 
     RRForm & operator=(RRForm const & rhs);
-    void execute(Bureaucrat const & executor) const;
+    virtual void action() const;
 
 private:
     std::string _target;

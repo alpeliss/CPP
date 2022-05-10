@@ -21,11 +21,18 @@ int main(){
     meta->makeSound();
     wa->makeSound();
     wc->makeSound();
-    delete i;
+  /*  delete i;
     delete j;
     delete meta;
     delete wc;
-    delete wa;
+    delete wa;*/
+    i = NULL;
+    j = new Dog();
+    meta = NULL;
+    wa = NULL;
+    wc = NULL;
+    system ("leaks Animals");
+
 
 return 0;
 }

@@ -19,8 +19,8 @@ PPForm::~PPForm(){
     return ;
 }
 
-void    PPForm::execute(Bureaucrat const & executor) const{
-    std::cout << "PPform executed vers" << this->_target;
+void    PPForm::action() const{
+    std::cout << "PPform executed vers" << this->_target << std::endl;
     return ;
 }
 

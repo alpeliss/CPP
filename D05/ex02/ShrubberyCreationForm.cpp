@@ -19,8 +19,8 @@ SCForm::~SCForm(){
     return ;
 }
 
-void    SCForm::execute(Bureaucrat const & executor) const{
-    std::cout << "PPform executed vers" << this->_target;
+void    SCForm::action() const{
+    std::cout << "PPform executed vers " << this->_target << std::endl;
     return ;
 }
 

@@ -17,7 +17,7 @@ public:
     Bureaucrat & operator=(Bureaucrat const & rhs);
     void    promote();
     void    demote();
-    void signForm(Form &form) const;
+    void signForm(Form &form) ;
 
 private:
     Bureaucrat ();
@@ -30,10 +30,6 @@ private:
 		virtual const char* what() const throw();
     };
     class GradeTooLowException : public std::exception{
-    public:
-		virtual const char* what() const throw();
-    };
-    class AlreadySignedException : public std::exception{
     public:
 		virtual const char* what() const throw();
     };
