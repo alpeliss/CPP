@@ -1,8 +1,7 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "PresidentialPardonForm.hpp"
-#include "ShrubberyCreationForm.hpp"
+#include "Intern.hpp"
+
 
 
 int main(){
@@ -32,4 +31,26 @@ int main(){
     boss.executeForm(robot);
     boss.executeForm(robot);
     boss.executeForm(robot);
+
+
+    Intern someRandomIntern;
+    AForm* rrf;
+    try{
+    rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+    std::cout << *rrf << std::endl;
+    delete (rrf);
+
+    rrf = someRandomIntern.makeForm("shrubbery creation", "Bender");
+    std::cout << *rrf << std::endl;
+    delete (rrf);
+
+    rrf = someRandomIntern.makeForm("presidential pardon", "Bender");
+    std::cout << *rrf << std::endl;
+    delete (rrf);
+
+     rrf = someRandomIntern.makeForm("presial padon", "Bender");
+    }
+    catch(const std::exception& e){
+	    std::cerr << e.what() << std::endl;
+    }
 }
