@@ -17,6 +17,6 @@ private:
 
 };
 
-std::ostream & operator<<(std::ostream & o, Canon const & rhs)
+std::ostream & operator<<(std::ostream & o, Canon const & rhs);
 
 #endif
